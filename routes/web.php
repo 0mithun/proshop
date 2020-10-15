@@ -26,6 +26,11 @@ Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
 Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin'], function(){
     Route::group(['prefix'=>'category', 'namespace'=>'Category'], function(){
         Route::get('/','CategoryController@index')->name('admin.category.index');
+        Route::post('/store','CategoryController@store')->name('admin.category.store');
+        Route::get('/{category}/edit','CategoryController@edit')->name('admin.category.edit');
+        Route::PUT('/{category}/update','CategoryController@update')->name('admin.category.update');
+        Route::get('/{category}/delete','CategoryController@destroy')->name('admin.category.destroy');
     });
+
 
 });

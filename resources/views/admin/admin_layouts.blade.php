@@ -31,14 +31,39 @@
     <title>Ecommerce Site Admin Panel</title>
 
     <!-- vendor css -->
-    <link href="{{ asset('backend')  }}//lib/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="{{ asset('backend')  }}//lib/Ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="{{ asset('backend')  }}//lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
-    <link href="{{ asset('backend')  }}//lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="{{ asset('backend')  }}/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ asset('backend')  }}/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="{{ asset('backend')  }}/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="{{ asset('backend')  }}/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 
+    @yield('admin_styles')
+
     <!-- Starlight CSS -->
-    <link rel="stylesheet" href="{{ asset('backend')  }}//css/starlight.css">
+    <link rel="stylesheet" href="{{ asset('backend')  }}/css/starlight.css">
+
+    <style>
+        .close{
+            cursor: pointer;
+        }
+        .close:hover
+        {
+            box-sizing: border-box!important;
+            background-color: rgba(0,0,0,.5)!important;
+            padding: 3px 6px!important;
+            color: white;
+            border-radius: 10px;
+             font-size: 1rem;
+             font-weight: normal;
+            line-height: 1;
+            /* text-shadow: 0 1px 0 #fff; */
+            opacity: .5;
+        }
+
+        .close:focus{
+            outline: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,6 +81,7 @@
 <script src="{{ asset('backend')  }}/lib/bootstrap/bootstrap.js"></script>
 <script src="{{ asset('backend')  }}/lib/jquery-ui/jquery-ui.js"></script>
 <script src="{{ asset('backend')  }}/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    @yield('admin_scripts')
 <script src="{{ asset('backend')  }}/lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
 <script src="{{ asset('backend')  }}/lib/d3/d3.js"></script>
 <script src="{{ asset('backend')  }}/lib/rickshaw/rickshaw.min.js"></script>
@@ -94,7 +120,7 @@
 </script>
 
 <script>
-    $(document).on("click", "#delete", function(e){
+    $(document).on("click", ".delete", function(e){
         e.preventDefault();
         var link = $(this).attr("href");
         swal({
@@ -107,11 +133,10 @@
             .then((willDelete) => {
                 if (willDelete) {
                     window.location.href = link;
-                } else {
-                    swal("Safe Data!");
                 }
             });
     });
 </script>
+
 </body>
 </html>
