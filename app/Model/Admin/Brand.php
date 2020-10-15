@@ -10,4 +10,8 @@ class Brand extends Model
         'name',
         'logo'
     ];
+
+    public function getLogoAttribute($logo){
+        return 'storage/'.$logo;
+    }
 }

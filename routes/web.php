@@ -32,5 +32,13 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::get('/{category}/delete','CategoryController@destroy')->name('admin.category.destroy');
     });
 
+    Route::group(['prefix'=>'brand', 'namespace'=>'Brand'], function(){
+        Route::get('/','BrandController@index')->name('admin.brand.index');
+        Route::post('/store','BrandController@store')->name('admin.brand.store');
+        Route::get('/{brand}/edit','BrandController@edit')->name('admin.brand.edit');
+        Route::PUT('/{brand}/update','BrandController@update')->name('admin.brand.update');
+        Route::get('/{brand}/delete','BrandController@destroy')->name('admin.brand.destroy');
+    });
+
 
 });
