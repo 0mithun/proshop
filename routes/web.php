@@ -22,3 +22,10 @@ Route::post('admin/update/reset', 'Admin\ResetPasswordController@reset')->name('
 Route::get('/admin/Change/Password','AdminController@ChangePassword')->name('admin.password.change');
 Route::post('/admin/password/update','AdminController@Update_pass')->name('admin.password.update');
 Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
+
+Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin'], function(){
+    Route::group(['prefix'=>'category', 'namespace'=>'Category'], function(){
+        Route::get('/','CategoryController@index')->name('admin.category.index');
+    });
+
+});
