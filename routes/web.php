@@ -56,5 +56,13 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::get('/{coupon}/delete','CouponController@destroy')->name('admin.coupon.destroy');
     });
 
+    Route::group(['prefix'=>'newslater', 'namespace'=>'Newslater'], function(){
+        Route::get('/','NewslaterController@index')->name('admin.newslater.index');
+        Route::get('/{newslater}/delete','NewslaterController@destroy')->name('admin.newslater.destroy');
+    });
+
 
 });
+
+Route::post('/newslater/store','NewslaterController@store')->name('newslater.store');
+
