@@ -48,5 +48,13 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::get('/{subcategory}/delete','SubcategoryController@destroy')->name('admin.subcategory.destroy');
     });
 
+    Route::group(['prefix'=>'coupon', 'namespace'=>'Coupon'], function(){
+        Route::get('/','CouponController@index')->name('admin.coupon.index');
+        Route::post('/store','CouponController@store')->name('admin.coupon.store');
+        Route::get('/{coupon}/edit','CouponController@edit')->name('admin.coupon.edit');
+        Route::PUT('/{coupon}/update','CouponController@update')->name('admin.coupon.update');
+        Route::get('/{coupon}/delete','CouponController@destroy')->name('admin.coupon.destroy');
+    });
+
 
 });
