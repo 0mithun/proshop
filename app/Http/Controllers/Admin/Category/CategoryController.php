@@ -58,4 +58,9 @@ class CategoryController extends Controller
 
         return redirect()->back()->with($notifications);
     }
+
+    public function getAllSubCategories(Category $category){
+        $subcategories = $category->subcategories;
+        return $subcategories;
+    }
 }

@@ -30,6 +30,8 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::get('/{category}/edit','CategoryController@edit')->name('admin.category.edit');
         Route::PUT('/{category}/update','CategoryController@update')->name('admin.category.update');
         Route::get('/{category}/delete','CategoryController@destroy')->name('admin.category.destroy');
+
+        Route::get('/{category}/get-all-category','CategoryController@getAllSubCategories');
     });
 
     Route::group(['prefix'=>'brand', 'namespace'=>'Brand'], function(){
@@ -55,6 +57,16 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::PUT('/{coupon}/update','CouponController@update')->name('admin.coupon.update');
         Route::get('/{coupon}/delete','CouponController@destroy')->name('admin.coupon.destroy');
     });
+
+    Route::group(['prefix'=>'product', 'namespace'=>'Product'], function(){
+        Route::get('/','ProductController@index')->name('admin.product.index');
+        Route::get('/create','ProductController@create')->name('admin.product.create');
+        Route::post('/store','ProductController@store')->name('admin.product.store');
+        Route::get('/{product}/edit','ProductController@edit')->name('admin.product.edit');
+        Route::PUT('/{product}/update','ProductController@update')->name('admin.product.update');
+        Route::get('/{product}/delete','ProductController@destroy')->name('admin.product.destroy');
+    });
+
 
     Route::group(['prefix'=>'newslater', 'namespace'=>'Newslater'], function(){
         Route::get('/','NewslaterController@index')->name('admin.newslater.index');
