@@ -19,4 +19,29 @@ class Product extends Model
         'hot_new'   =>'boolean',
         'trend'   =>'boolean',
     ];
+
+    public function getImageOneAttribute($image_one){
+        return 'storage/'.$image_one;
+    }
+    public function getImageTwoAttribute($image_two){
+        return 'storage/'.$image_two;
+    }
+
+    public function getImageThreeAttribute($image_three){
+        return 'storage/'.$image_three;
+    }
+
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    public function brand(){
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function subcategory(){
+        return $this->belongsTo(Subcategory::class);
+    }
+
 }

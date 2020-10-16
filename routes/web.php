@@ -58,13 +58,18 @@ Route::group(['middleware'=>['auth:admin'],'namespace'=>'Admin','prefix'=>'admin
         Route::get('/{coupon}/delete','CouponController@destroy')->name('admin.coupon.destroy');
     });
 
+
     Route::group(['prefix'=>'product', 'namespace'=>'Product'], function(){
         Route::get('/','ProductController@index')->name('admin.product.index');
         Route::get('/create','ProductController@create')->name('admin.product.create');
         Route::post('/store','ProductController@store')->name('admin.product.store');
+        Route::get('/{product}','ProductController@show')->name('admin.product.show');
         Route::get('/{product}/edit','ProductController@edit')->name('admin.product.edit');
         Route::PUT('/{product}/update','ProductController@update')->name('admin.product.update');
         Route::get('/{product}/delete','ProductController@destroy')->name('admin.product.destroy');
+
+        Route::get('/{product}/active','ProductController@active')->name('admin.product.active');
+        Route::get('/{product}/inactive','ProductController@inactive')->name('admin.product.inactive');
     });
 
 

@@ -14,4 +14,9 @@ class Brand extends Model
     public function getLogoAttribute($logo){
         return 'storage/'.$logo;
     }
+
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }

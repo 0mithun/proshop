@@ -30,6 +30,7 @@ class CreateProductRequest extends FormRequest
             'code'      => 'required|max:255',
             'quantity'      => 'required|numeric|not_in:0',
             'price'      => 'required|numeric|not_in:0',
+            'sell_price'      => 'required|numeric|not_in:0',
             'detail'      => 'required',
             'image_one'      => 'required|max:1024|mimes:jpeg,bmp,png',
             'image_two'      => 'max:1024|mimes:jpeg,bmp,png',

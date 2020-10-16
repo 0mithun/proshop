@@ -36,7 +36,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('hot_new')->default(0);
             $table->tinyInteger('trend')->default(0);
 
-            $table->string('image_one');
+            $table->string('image_one')->nullable();
             $table->string('image_two')->nullable();
             $table->string('image_three')->nullable();
             $table->tinyInteger('status')->default(1);

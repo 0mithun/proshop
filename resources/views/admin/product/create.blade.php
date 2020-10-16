@@ -29,7 +29,7 @@
                             </div><!-- col-4 -->
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label class="form-control-label">Product Dode<span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Product Code<span class="tx-danger">*</span></label>
                                     <input class="form-control @error('code') is-invalid @enderror" type="text" name="code" value="{{ old('code')  }}" placeholder="Enter product code">
                                     @error('code')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -76,7 +76,7 @@
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Sub Category: <span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Sub Category:</label>
                                     <select name="subcategory_id" id="subcategory_id" class="form-control @error('subcategory_id') is-invalid @enderror">
 
                                     </select>
@@ -105,7 +105,7 @@
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Color: <span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Color: </label>
                                     <input class="form-control @error('color') is-invalid @enderror" type="text" name="color" value="{{ old('color')  }}" placeholder="Enter product color" data-role="tagsinput">
 
                                     @error('color')
@@ -117,7 +117,7 @@
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Size: <span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Size: </label>
                                     <input class="form-control @error('size') is-invalid @enderror" type="text" name="size" value="{{ old('size')  }}" placeholder="Enter product size" data-role="tagsinput">
                                     @error('size')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -148,7 +148,7 @@
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Discount Price: <span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Discount Price:</label>
                                     <input class="form-control @error('discount_price') is-invalid @enderror" type="number" name="discount_price" value="{{ old('discount_price')  }}" placeholder="Enter product discount price">
                                     @error('discount_price')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -157,7 +157,7 @@
                             </div><!-- col-4 -->
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label class="form-control-label">Video: <span class="tx-danger">*</span></label>
+                                    <label class="form-control-label">Video: </label>
                                     <input class="form-control @error('video') is-invalid @enderror" type="text" name="video" value="{{ old('video')  }}" placeholder="Enter video link">
                                     @error('video')
                                     <div class="invalid-feedback">{{ $message }}</div>
