@@ -16,7 +16,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/styles/responsive.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+    <style>
 
+        .product_new {
+            background: blue;
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 
 </head>
 
