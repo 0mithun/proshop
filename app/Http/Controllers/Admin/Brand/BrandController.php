@@ -107,7 +107,7 @@ class BrandController extends Controller
             'alert-type'    => 'success'
         ];
 
-        return redirect()->back()->with($notofications);
+        return redirect()->route('admin.brand.index')->with($notofications);
     }
 
     /**

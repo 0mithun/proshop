@@ -57,15 +57,15 @@ class ProductController extends Controller
 
         $image_data = [];
         if($image_one){
-            $this->uploadImage($image_one, $image_data,  'image_one');
+            $image_data = $this->uploadImage($image_one, $image_data,  'image_one');
         }
 
         if($image_two){
-            $this->uploadImage($image_two, $image_data,  'image_two');
+            $image_data = $this->uploadImage($image_two, $image_data,  'image_two');
         }
 
         if($image_three){
-            $this->uploadImage($image_three, $image_data,'image_three');
+            $image_data = $this->uploadImage($image_three, $image_data,'image_three');
         }
 
         $product->fresh();
@@ -238,7 +238,7 @@ class ProductController extends Controller
         $image_extension = $image->getClientOriginalExtension();
         $image_name = hexdec(uniqid()) . '.' . $image_extension;
         $image_full_name = $this->save_path . $image_name;
-        Image::make($image)->resize(300, 300)->save(storage_path($this->save_path. $image_full_name));
+        Image::make($image)->resize(300, 300)->save(storage_path('app/public/'.$image_full_name));
         $image_data[$field] = $image_full_name;
 
         return $image_data;
