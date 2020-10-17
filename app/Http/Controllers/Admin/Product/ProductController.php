@@ -7,6 +7,7 @@ use App\Http\Requests\Product\CreateProductRequest;
 use App\Model\Admin\Brand;
 use App\Model\Admin\Category;
 use App\Model\Admin\Product;
+use App\Model\Admin\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -99,8 +100,9 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
+        $subcategories = Subcategory::where('category_id', $product->category_id)->get();
 
-        return view('admin.product.edit', compact('categories', 'brands','product'));
+        return view('admin.product.edit', compact('categories', 'brands','product','subcategories'));
     }
 
     /**

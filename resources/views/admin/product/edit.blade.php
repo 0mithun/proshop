@@ -83,7 +83,16 @@
                                 <div class="form-group">
                                     <label class="form-control-label">Sub Category:</label>
                                     <select name="subcategory_id" id="subcategory_id" class="form-control @error('subcategory_id') is-invalid @enderror">
-
+                                        @if($product->subcategory()->exists())
+                                            @foreach($subcategories as $subcategory)
+                                                <option value="{{ $subcategory->id }}" @if($product->subcategory_id == $subcategory->id) selected @endif>{{ $subcategory->name  }}</option>
+                                            @endforeach
+                                        @else
+                                            <option value="">Please select a subcategory</option>
+                                            @foreach($subcategories as $subcategory)
+                                                <option value="{{ $subcategory->id }}">{{ $subcategory->name  }}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
 
                                     @error('subcategory_id')
