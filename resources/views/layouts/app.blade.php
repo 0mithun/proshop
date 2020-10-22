@@ -13,6 +13,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/styles/main_styles.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/styles/contact_styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/styles/contact_responsive.css">
+
+
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend')  }}/styles/responsive.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">

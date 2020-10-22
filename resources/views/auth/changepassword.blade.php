@@ -59,6 +59,24 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 ">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-heading text-center">
+                        <img src="{{  asset('/frontend/images/profile.jpeg')  }}" height="90px" width="90px" alt="">
+                    </h4>
+                    <h5 class="card-title text-center">{{ auth()->user()->name  }}</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="{{ route('password.change')  }}">Change Password</a></li>
+                        <li class="list-group-item">List 2</li>
+                        <li class="list-group-item">List 3</li>
+                    </ul>
+                    <a href="{{ route('user.logout')  }}" class="btn btn-sm btn-danger btn-block">Log Out</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
